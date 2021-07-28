@@ -1,24 +1,65 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Colum              | Type    | Options                   |
+| ------------------ | ------- | ------------------------- |
+| nickname           | string  | null: false               |
+| name               | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| birthday           | date    | null: false               |
+| phone              | string  | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many   :successes
+- has_many   :emotions
+- has_many   :messages
+- has_many   :notes
 
-* Configuration
+## successesテーブル
 
-* Database creation
+| Colum | Type       | Options                        |
+| ----- | ---------- | ------------------------------ |
+| title | string     | null: false                    |
+| text  | text       | null: false                    |
+| user  | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+## emotionsテーブル
 
-* Deployment instructions
+| Colum | Type       | Options                        |
+| ----- | ---------- | ------------------------------ |
+| title | string     | null: false                    |
+| text  | text       | null: false                    |
+| user  | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :user
+
+## messagesテーブル
+
+| Colum   | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| comment | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## notesテーブル
+
+| Colum   | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| comment | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user

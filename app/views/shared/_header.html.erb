@@ -1,3 +1,21 @@
 <header class="top-page-header">
-  
+
+  <div class="nav">
+    <div class="header-left">
+      <%= link_to "SELFY", "#", class: "header-logo" %>
+    </div>
+
+    <div class="header-right">
+      <ul class="user-devise">
+        <%# if user_signed_in? %>
+          <li><%= link_to "ログアウト", "#", method: :delete,  class: "logout" %></li>
+          <li><%= link_to "退会", "#", class: "unsubscribe" %></li>
+        <%# else %>
+          <li><%= link_to "ログイン", "#", class: "login" %></li>
+          <li><%= link_to "新規登録", "#", class: "sign-up" %></li>
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+
 </header>

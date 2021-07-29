@@ -6,9 +6,11 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :name
+    validates :name,format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: "is invalid. Input full-width characters" }
     validates :birthday
-    validates :phone
+    validates :phone, format: { with: /\A[0-9]{10,11}\z/, message: "is invalid. Input only number" }
   end
-  
+
+  validates :password, format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "is invalid. Include both letters and numbers" } 
+
 end

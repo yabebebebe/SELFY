@@ -8,7 +8,7 @@
     <div class="header-right">
       <ul class="user-devise">
         <%# if user_signed_in? %>
-          <li><%= link_to "ログアウト", "#", method: :delete,  class: "logout" %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,  class: "logout" %></li>
           <li><%= link_to "退会", "#", class: "unsubscribe" %></li>
         <%# else %>
           <li><%= link_to "ログイン", "#", class: "login" %></li>

@@ -1,0 +1,28 @@
+.nav {
+  display: flex;
+}
+
+.header-logo {
+  text-decoration: none;
+}
+
+.user-devise {
+  display: flex;
+  list-style: none;
+}
+
+.logout {
+  text-decoration: none;
+}
+
+.unsubscribe {
+  text-decoration: none;
+}
+
+.login {
+  text-decoration: none;
+}
+
+.sign-up {
+  text-decoration: none;
+}

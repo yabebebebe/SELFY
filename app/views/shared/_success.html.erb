@@ -1,1 +1,24 @@
-<h1>成功体験一覧</h1>
+<div class="success-contents">
+
+  <div class="left-contents">
+    <h1>成功体験一覧</h1>
+  </div>
+
+  <div class="right-contents">
+    <h4>成功体験投稿</h4>
+    <div class="success-form">
+      <%= form_with(model: [@user, @success], local: true) do |f| %>
+
+        <div class="success-title">タイトル</div>
+        <%= f.text_area :title, class: "", placeholder: "例）私が転職に成功した話" %>
+        <div class="success-text">内容</div>
+        <%= f.text_area :text, class: "", placeholder: "あなたの成功体験を好きなように投稿しましょう！！" %>
+
+        <div class="success-btn">
+          <%= f.submit "投稿", class: "" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

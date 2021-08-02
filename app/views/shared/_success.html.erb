@@ -1,7 +1,17 @@
 <div class="success-contents">
 
   <div class="left-contents">
-    <h1>成功体験一覧</h1>
+    <h4>成功体験一覧</h4>
+
+    <ul class="successes-lists">
+      <% @successes.each do |success| %>
+        <li class="success-list">
+          <%= success.title %>
+          <%= success.text %>
+          <%= success.user.nickname %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div class="right-contents">

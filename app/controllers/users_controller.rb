@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
 
   def index
-    @user = User.find(current_user.id)
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    #else
+      #@user = User.find(params[:user_id])
+    end
     @success = Success.new
+    @successes = Success.all.order("created_at DESC")
+    
   end
 
   def show

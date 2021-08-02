@@ -7,8 +7,7 @@ class UsersController < ApplicationController
       #@user = User.find(params[:user_id])
     end
     @success = Success.new
-    @successes = Success.all.order("created_at DESC")
-    
+    @successes = Success.all.order("created_at DESC")   
   end
 
   def show

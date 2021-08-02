@@ -9,6 +9,10 @@ class SuccessesController < ApplicationController
     end
   end
 
+  def show
+    @success = Success.find(params[:id])
+  end
+
   private
 
   def success_params

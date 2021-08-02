@@ -6,9 +6,9 @@
     <ul class="successes-lists">
       <% @successes.each do |success| %>
         <li class="success-list">
-          <%= success.title %>
-          <%= success.text %>
+          <%= link_to success.title, success_path(success.id) %>
           <%= success.user.nickname %>
+          <%= success.created_at %>
         </li>
       <% end %>
     </ul>

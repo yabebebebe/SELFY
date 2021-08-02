@@ -1,2 +1,21 @@
+<div class="my-page">
 
-<h1>マイページ</h1>
+  <div class="my-image">
+    <%= image_tag current_user.image, class: "" if current_user.image.attached? %>
+  </div>
+
+
+  <div class="my-profile">
+    <div class="profile-content">ユーザー名</div>
+      <div><%= current_user.nickname %></div>
+    <div class="profile-content">本名</div>
+      <div><%= current_user.name %></div>
+    <div class="profile-content">メールアドレス</div>
+      <div><%= current_user.email %></div>
+    <div class="profile-content">生年月日</div>
+      <div><%= current_user.birthday %></div>
+    <div class="profile-content">電話番号</div>
+      <div><%= current_user.phone %></div>
+  </div>
+
+</div>

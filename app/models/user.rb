@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one_attached :image
   has_many         :successes
   has_many         :emotions
+  has_many         :messages
 
   with_options presence: true do
     validates :image

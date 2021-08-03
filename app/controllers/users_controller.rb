@@ -5,7 +5,10 @@ class UsersController < ApplicationController
       @user = User.find(current_user.id)
     end
     @success = Success.new
-    @successes = Success.all.order("created_at DESC")   
+    @successes = Success.all.order("created_at DESC")
+    
+    @emotion = Emotion.new
+    @emotions = Emotion.all.order("created_at DESC")
   end
 
   def show

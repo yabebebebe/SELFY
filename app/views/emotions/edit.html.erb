@@ -1,18 +1,7 @@
-<div class="success-contents">
+<%= render "shared/header" %>
 
-  <div class="left-contents">
-    <h4>情緒的喚起一覧</h4>
+<h1>情緒的喚起の編集ページ</h1>
 
-    <p class="successes-lists">
-      <% @emotions.each do |emotion| %>
-        <p class="success-list">
-          <%= link_to emotion.title, emotion_path(emotion.id) %>
-          <%= emotion.user.nickname %>
-          <%= emotion.created_at %>
-        </p>
-      <% end %>
-    </p>    
-  </div>
 
   <div class="right-contents">
     <h4>情緒的喚起投稿</h4>
@@ -25,10 +14,9 @@
         <%= f.text_area :text, class: "", placeholder: "あなたが情緒的喚起できることを投稿しましょう！！" %>
 
         <div class="success-btn">
-          <%= f.submit "投稿", class: "" %>
+          <%= f.submit "更新", class: "" %>
         </div>
 
       <% end %>
     </div>
   </div>
-</div>

@@ -13,6 +13,22 @@ class SuccessesController < ApplicationController
     @success = Success.find(params[:id])
   end
 
+  def edit
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
+    @success = Success.find(params[:id])   
+  end
+
+  def update
+    @success = Success.find(params[:id])
+    if @success.update(success_params)
+      redirect_to root_path
+    else
+      render :edit
+    end    
+  end
+
   private
 
   def success_params

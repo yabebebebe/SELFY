@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'users#index'
   resources :users do
     resources :successes, only: [:create, :edit, :update, :destroy]
-    resources :emotions, only: [:create, :edit, :update]
+    resources :emotions, only: [:create, :edit, :update, :destroy]
   end
   resources :users, only: [:show, :destroy]
   resources :successes, only: :show

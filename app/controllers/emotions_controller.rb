@@ -1,7 +1,8 @@
 class EmotionsController < ApplicationController
-
-  before_action :set_emotion, only: [:show, :edit, :update]
-
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :set_emotion, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_top_page, only: [:edit, :update, :destroy]
+  
   def create
     @emotion = Emotion.new(emotion_params)
     if @emotion.save
@@ -29,6 +30,14 @@ class EmotionsController < ApplicationController
     end    
   end
 
+  def destroy
+    if @emotion.destroy
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def emotion_params
@@ -37,6 +46,12 @@ class EmotionsController < ApplicationController
 
   def set_emotion
     @emotion = Emotion.find(params[:id]) 
+  end
+
+  def move_to_top_page
+    unless current_user.id == @emotion.user_id
+      redirect_to root_path
+    end
   end
 
 end

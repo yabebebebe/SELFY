@@ -17,7 +17,7 @@
     <% if user_signed_in? && current_user.id == @success.user_id %>
       <%= link_to "編集", edit_user_success_path(@success.id), class: "" %>
       <p class="or-text">or</p>
-      <%= link_to "削除", "#" %>
+      <%= link_to "削除", user_success_path(@success.id), method: :delete, class: "" %>
     <% else %>
       <div class="good-btn">いいね！</div>
     <% end %>

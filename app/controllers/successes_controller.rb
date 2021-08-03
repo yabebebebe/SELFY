@@ -1,4 +1,5 @@
 class SuccessesController < ApplicationController
+  before_action :set_success, only: [:show, :edit, :update, :destroy]
 
   def create
     @success = Success.new(success_params)
@@ -10,18 +11,16 @@ class SuccessesController < ApplicationController
   end
 
   def show
-    @success = Success.find(params[:id])
+
   end
 
   def edit
     if user_signed_in?
       @user = User.find(current_user.id)
     end
-    @success = Success.find(params[:id])   
   end
 
   def update
-    @success = Success.find(params[:id])
     if @success.update(success_params)
       redirect_to root_path
     else
@@ -29,10 +28,22 @@ class SuccessesController < ApplicationController
     end    
   end
 
+  def destroy
+    if @success.destroy
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def success_params
     params.require(:success).permit(:title, :text).merge(user_id: params[:user_id])
+  end
+
+  def set_success
+    @success = Success.find(params[:id]) 
   end
 
 end

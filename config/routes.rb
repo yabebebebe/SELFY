@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :destroy]
   resources :successes, only: :show
+  resources :emotions, only: :show
 end

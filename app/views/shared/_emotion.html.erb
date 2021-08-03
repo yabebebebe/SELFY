@@ -6,7 +6,7 @@
     <p class="successes-lists">
       <% @emotions.each do |emotion| %>
         <p class="success-list">
-          <%= emotion.title %>
+          <%= link_to emotion.title, emotion_path(emotion.id) %>
           <%= emotion.user.nickname %>
           <%= emotion.created_at %>
         </p>

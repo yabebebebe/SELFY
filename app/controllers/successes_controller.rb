@@ -1,5 +1,7 @@
 class SuccessesController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
   before_action :set_success, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_top_page, only: [:edit, :update, :destroy]
 
   def create
     @success = Success.new(success_params)
@@ -45,5 +47,11 @@ class SuccessesController < ApplicationController
   def set_success
     @success = Success.find(params[:id]) 
   end
+
+  def move_to_top_page
+    unless current_user.id == @success.user_id
+      redirect_to root_path
+    end
+  end  
 
 end

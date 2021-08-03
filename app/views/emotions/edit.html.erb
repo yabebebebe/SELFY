@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+
+<h1>情緒的喚起の編集ページ</h1>
+
+
+  <div class="right-contents">
+    <h4>情緒的喚起投稿</h4>
+    <div class="success-form">
+      <%= form_with(model: [@user, @emotion], local: true) do |f| %>
+
+        <div class="success-title">タイトル</div>
+        <%= f.text_area :title, class: "", placeholder: "例）私が情緒的喚起できること" %>
+        <div class="success-text">内容</div>
+        <%= f.text_area :text, class: "", placeholder: "あなたが情緒的喚起できることを投稿しましょう！！" %>
+
+        <div class="success-btn">
+          <%= f.submit "更新", class: "" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>

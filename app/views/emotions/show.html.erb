@@ -15,7 +15,7 @@
 
   <div class="success-btn">
     <% if user_signed_in? && current_user.id == @emotion.user_id %>
-      <%= link_to "編集", "#", class: "" %>
+      <%= link_to "編集", edit_user_emotion_path(@emotion.id), class: "" %>
       <p class="or-text">or</p>
       <%= link_to "削除", "#", method: :delete, class: "" %>
     <% else %>

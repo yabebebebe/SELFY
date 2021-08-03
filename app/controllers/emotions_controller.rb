@@ -1,6 +1,6 @@
 class EmotionsController < ApplicationController
 
-  before_action :set_emotion, only: :show
+  before_action :set_emotion, only: [:show, :edit, :update]
 
   def create
     @emotion = Emotion.new(emotion_params)
@@ -13,6 +13,20 @@ class EmotionsController < ApplicationController
 
   def show
 
+  end
+
+  def edit
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
+  end
+
+  def update
+    if @emotion.update(emotion_params)
+      redirect_to root_path
+    else
+      render :edit
+    end    
   end
 
   private

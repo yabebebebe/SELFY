@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @successes = Success.all.order("created_at DESC")
     
     @emotion = Emotion.new
+    @emotions = Emotion.all.order("created_at DESC")
   end
 
   def show

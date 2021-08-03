@@ -1,8 +1,17 @@
-<%# 他コンテンツと同じCSSを反映させる為一時的にクラス名等は同じ %>
 <div class="success-contents">
 
   <div class="left-contents">
     <h4>情緒的喚起一覧</h4>
+
+    <p class="successes-lists">
+      <% @emotions.each do |emotion| %>
+        <p class="success-list">
+          <%= emotion.title %>
+          <%= emotion.user.nickname %>
+          <%= emotion.created_at %>
+        </p>
+      <% end %>
+    </p>    
   </div>
 
   <div class="right-contents">

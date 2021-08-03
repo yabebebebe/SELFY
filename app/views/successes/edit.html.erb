@@ -1,18 +1,7 @@
-<div class="success-contents">
+<%= render "shared/header" %>
 
-  <div class="left-contents">
-    <h4>成功体験一覧</h4>
+<h1>成功体験の編集ページ</h1>
 
-    <ul class="successes-lists">
-      <% @successes.each do |success| %>
-        <li class="success-list">
-          <%= link_to success.title, success_path(success.id) %>
-          <%= success.user.nickname %>
-          <%= success.created_at %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
 
   <div class="right-contents">
     <h4>成功体験投稿</h4>
@@ -25,10 +14,9 @@
         <%= f.text_area :text, class: "", placeholder: "あなたの成功体験を好きなように投稿しましょう！！" %>
 
         <div class="success-btn">
-          <%= f.submit "投稿", class: "" %>
+          <%= f.submit "更新", class: "" %>
         </div>
 
       <% end %>
     </div>
   </div>
-</div>

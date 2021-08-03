@@ -1,0 +1,9 @@
+.success-contents-show {
+  text-align: center;
+}
+
+.success-btn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

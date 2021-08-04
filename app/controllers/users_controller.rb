@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @emotions = Emotion.all.order("created_at DESC")
 
     @message = Message.new
+    @messages = Message.all
   end
 
   def show

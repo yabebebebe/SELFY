@@ -1,1 +1,8 @@
 <h1>褒めちぎり</h1>
+
+<div class="message-form">
+  <%= form_with(model: [@user, @message], local: true) do |f|%>
+    <%= f.text_field :comment, placeholder: 'メッセージを入力', class: '' %>
+    <%= f.submit '送信', class: 'send' %>
+  <% end %>
+</div>

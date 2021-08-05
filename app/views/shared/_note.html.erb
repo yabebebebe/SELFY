@@ -6,3 +6,11 @@
     <%= f.submit '送信', id: 'submit' %>
   <% end %>
 </div>
+
+<div id=''>
+  <% @notes.each do |note| %>
+    <% if current_user.id == note.user_id %>
+      <P><%= note.comment %></p>
+    <% end %>
+  <% end %>
+</div>

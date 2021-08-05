@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @messages = Message.all
 
     @note = Note.new
-    #@notes = Note.all
+    @notes = Note.all
   end
 
   def show

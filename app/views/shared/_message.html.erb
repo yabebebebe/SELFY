@@ -2,7 +2,7 @@
 
 <div id='messages'>
   <% @messages.each do |message| %>
-    <% if current_user.id == message.user_id%>
+    <% if current_user.id == message.user_id %>
       <P class="keep-right"><%= message.user.nickname %></p>
       <P class="keep-right"><%= message.comment %></p>
     <% else %>

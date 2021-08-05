@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :successes, only: [:create, :edit, :update, :destroy]
     resources :emotions, only: [:create, :edit, :update, :destroy]
+    resources :messages, only: :create
   end
   resources :users, only: [:show, :destroy]
   resources :successes, only: :show

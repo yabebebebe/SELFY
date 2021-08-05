@@ -1,0 +1,8 @@
+.messages {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.keep-right {
+  text-align: right;
+}

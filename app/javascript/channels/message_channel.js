@@ -10,6 +10,13 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    // Called when there's incoming data on the websocket for this channel
+    const html = `<p>${data.content.comment}</p>`;
+    const messages = document.getElementById('messages');
+    const newMessage = document.getElementById('message_comment');
+    const submit = document.getElementById('submit');
+    messages.insertAdjacentHTML('afterend', html);
+    newMessage.value='';
+    submit.disabled = false;
   }
+  
 });

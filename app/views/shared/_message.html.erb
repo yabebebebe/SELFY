@@ -1,14 +1,15 @@
 <h1>褒めちぎり</h1>
 
-<div id="messages">
+<div id='messages'>
   <% @messages.each do |message| %>
+    <P><%= message.user.nickname %></p>
     <P><%= message.comment %></p>
   <% end %>
 </div>
 
 <div class="message-form">
-  <%= form_with(model: [@user, @message], local: true) do |f|%>
-    <%= f.text_field :comment, placeholder: 'メッセージを入力', class: '' %>
-    <%= f.submit '送信', class: 'send' %>
+  <%= form_with(model: [@user, @message], local: true) do |f| %>
+    <%= f.text_field :comment, placeholder: 'メッセージを入力' %>
+    <%= f.submit '送信', id: 'submit' %>
   <% end %>
 </div>

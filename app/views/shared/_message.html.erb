@@ -2,8 +2,13 @@
 
 <div id='messages'>
   <% @messages.each do |message| %>
-    <P><%= message.user.nickname %></p>
-    <P><%= message.comment %></p>
+    <% if current_user.id == message.user_id%>
+      <P class="keep-right"><%= message.user.nickname %></p>
+      <P class="keep-right"><%= message.comment %></p>
+    <% else %>
+      <P class="keep-left"><%= message.user.nickname %></p>
+      <P class="keep-left"><%= message.comment %></p>
+    <% end %>
   <% end %>
 </div>
 

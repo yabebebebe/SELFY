@@ -1,1 +1,8 @@
 <h1>マイノート</h1>
+
+<div class="message-form">
+  <%= form_with(model: [@user, @note], local: true) do |f| %>
+    <%= f.text_field :comment, placeholder: 'メッセージを入力' %>
+    <%= f.submit '送信', id: 'submit' %>
+  <% end %>
+</div>

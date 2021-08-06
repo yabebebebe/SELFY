@@ -1,1 +1,17 @@
 <h1>マイノート</h1>
+
+<div class="message-form">
+  <%= form_with(model: [@user, @note], local: true) do |f| %>
+    <%= f.text_field :comment, placeholder: 'メッセージを入力' %>
+    <%= f.submit '送信', id: 'note-submit' %>
+    <%= link_to '一括削除', note_path(@user), method: :delete, id: 'delete' %>
+  <% end %>
+</div>
+
+<div id='notes'>
+  <% @notes.each do |note| %>
+    <% if current_user.id == note.user_id %>
+      <P><%= note.comment %></p>
+    <% end %>
+  <% end %>
+</div>

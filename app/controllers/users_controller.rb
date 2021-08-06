@@ -12,6 +12,9 @@ class UsersController < ApplicationController
 
     @message = Message.new
     @messages = Message.all
+
+    @note = Note.new
+    @notes = Note.all
   end
 
   def show

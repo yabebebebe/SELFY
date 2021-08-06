@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     resources :successes, only: [:create, :edit, :update, :destroy]
     resources :emotions, only: [:create, :edit, :update, :destroy]
     resources :messages, only: :create
+    resources :notes, only: :create
   end
   resources :users, only: [:show, :destroy]
   resources :successes, only: :show
   resources :emotions, only: :show
+  resources :notes, only: :destroy
 end

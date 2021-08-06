@@ -4,8 +4,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     if @note.save
-      #ActionCable.server.broadcast 'message_channel', content: @message
-      redirect_to root_path
+      ActionCable.server.broadcast 'note_channel', content: @note
     end
   end
 

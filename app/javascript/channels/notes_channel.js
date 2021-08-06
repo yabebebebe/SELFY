@@ -10,6 +10,12 @@ consumer.subscriptions.create("NotesChannel", {
   },
 
   received(data) {
-    // Called when there's incoming data on the websocket for this channel
+    const html = `<p>${data.content.comment}</p>`;
+    const notes = document.getElementById('notes');
+    const newNote = document.getElementById('note_comment');
+    const submit = document.getElementById('note-submit');
+    notes.insertAdjacentHTML('afterend', html);
+    newNote.value='';
+    submit.disabled = false;
   }
 });

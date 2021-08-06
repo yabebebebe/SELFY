@@ -18,5 +18,4 @@ consumer.subscriptions.create("MessageChannel", {
     newMessage.value='';
     submit.disabled = false;
   }
-  
 });

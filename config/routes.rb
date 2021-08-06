@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :destroy]
   resources :successes, only: :show
   resources :emotions, only: :show
+  resources :notes, only: :destroy
 end

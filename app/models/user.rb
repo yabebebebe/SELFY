@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many         :successes
   has_many         :emotions
   has_many         :messages
-  has_many         :notes
+  has_many         :notes, dependent: :destroy
 
   with_options presence: true do
     validates :image

@@ -1,0 +1,28 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+
+ja:
+  activerecord:
+    attributes:
+      user:
+        image:    プロフィール画像
+        nickname: ユーザー名
+        name:     本名
+        birthday: 生年月日
+        phone:    電話番号
+      success:
+        title:    タイトル
+        text:     内容
+        user:     ユーザー
+      emotion:
+        title:    タイトル
+        text:     内容
+        user:     ユーザー
+      message:
+        comment:  メッセージ
+        user:     ユーザー
+      note:
+        comment:  メッセージ
+        user:     ユーザー

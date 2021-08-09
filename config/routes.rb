@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :messages, only: :create
     resources :notes, only: :create
   end
-  resources :users, only: [:show, :destroy]
+  resources :users, only: [:show, :edit, :destroy]
   resources :successes, only: :show
   resources :emotions, only: :show
   resources :notes, only: :destroy

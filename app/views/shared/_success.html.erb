@@ -3,12 +3,12 @@
   <div class="left-contents">
     <h4>成功体験一覧</h4>
 
-    <p class="successes-lists">
+    <p id="successes">
       <% @successes.each do |success| %>
         <p class="success-list">
           <%= link_to success.title, success_path(success.id) %>
           <%= success.user.nickname %>
-          <%= success.created_at %>
+          <%= l success.created_at %>
         </p>
       <% end %>
     </p>
@@ -25,7 +25,7 @@
         <%= f.text_area :text, class: "", placeholder: "あなたの成功体験を好きなように投稿しましょう！！" %>
 
         <div class="success-btn">
-          <%= f.submit "投稿", class: "" %>
+          <%= f.submit "投稿", id: "success-submit" %>
         </div>
 
       <% end %>

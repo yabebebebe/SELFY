@@ -6,3 +6,8 @@
 .keep-right {
   text-align: right;
 }
+
+.icon {
+  max-width: 30px;
+  height: auto;
+}

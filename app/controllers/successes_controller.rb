@@ -8,7 +8,7 @@ class SuccessesController < ApplicationController
     if @success.save
       redirect_to root_path
     else
-      render "users/show"
+      render "users/edit"
     end
   end
 

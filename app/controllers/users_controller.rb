@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :edit, :destroy]
 
   def index
     if user_signed_in?
@@ -18,6 +19,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    
+  end
+
+  def edit
     
   end
 

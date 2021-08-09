@@ -5,9 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :image
-  has_many         :successes
-  has_many         :emotions
-  has_many         :messages
+  has_many         :successes, dependent: :destroy
+  has_many         :emotions, dependent: :destroy
+  has_many         :messages, dependent: :destroy
   has_many         :notes, dependent: :destroy
 
   with_options presence: true do

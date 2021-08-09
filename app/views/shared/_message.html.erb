@@ -3,11 +3,15 @@
 <div id='messages'>
   <% @messages.each do |message| %>
     <% if current_user.id == message.user_id %>
-      <P class="keep-right"><%= message.user.nickname %></p>
-      <P class="keep-right"><%= message.comment %></p>
+      <P class="keep-right">
+        <%= message.comment %>
+        <%= image_tag message.user.image, class: "icon" if current_user.image.attached? %>
+      </p>
     <% else %>
-      <P class="keep-left"><%= message.user.nickname %></p>
-      <P class="keep-left"><%= message.comment %></p>
+      <P class="keep-left">
+        <%= image_tag message.user.image, class: "icon" %>
+        <%= message.comment %>
+      </p>
     <% end %>
   <% end %>
 </div>

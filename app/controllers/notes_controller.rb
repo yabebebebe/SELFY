@@ -1,10 +1,12 @@
 class NotesController < ApplicationController
-  before_action :authenticate_user!, only: :create
+  before_action :authenticate_user!, only: [:create, :destroy]
 
   def create
     @note = Note.new(note_params)
     if @note.save
       ActionCable.server.broadcast 'note_channel', content: @note
+    else
+      redirect_to root_path
     end
   end
 

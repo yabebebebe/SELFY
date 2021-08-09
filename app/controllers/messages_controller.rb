@@ -5,6 +5,8 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       ActionCable.server.broadcast 'message_channel', content: @message
+    else
+      redirect_to root_path
     end
   end
 

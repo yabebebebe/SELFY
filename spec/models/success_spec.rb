@@ -20,7 +20,7 @@ RSpec.describe Success, type: :model do
       it 'ユーザー情報が無い時' do
         @success.user = nil
         @success.valid?
-        expect(@success.errors.full_messages).to include("User must exist")
+        expect(@success.errors.full_messages).to include("ユーザーを入力してください")
       end
 
       context '各項目の入力値が空の時' do
@@ -28,13 +28,13 @@ RSpec.describe Success, type: :model do
         it 'titleが空の時' do
           @success.title = ''
           @success.valid?
-          expect(@success.errors.full_messages).to include("Title can't be blank")
+          expect(@success.errors.full_messages).to include("タイトルを入力してください")
         end
 
         it 'textが空の時' do
           @success.text = ''
           @success.valid?
-          expect(@success.errors.full_messages).to include("Text can't be blank")         
+          expect(@success.errors.full_messages).to include("内容を入力してください")         
         end
 
       end

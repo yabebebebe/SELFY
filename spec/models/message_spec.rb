@@ -20,13 +20,13 @@ RSpec.describe Message, type: :model do
       it 'ユーザー情報が無い時' do
         @message.user = nil
         @message.valid?
-        expect(@message.errors.full_messages).to include("User must exist")
+        expect(@message.errors.full_messages).to include("ユーザーを入力してください")
       end
         
       it 'commentが空の時' do
         @message.comment = ''
         @message.valid?
-        expect(@message.errors.full_messages).to include("Comment can't be blank")
+        expect(@message.errors.full_messages).to include("メッセージを入力してください")
       end
       
     end

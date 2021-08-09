@@ -5,7 +5,7 @@ RSpec.describe Emotion, type: :model do
     @emotion = FactoryBot.build(:emotion) 
   end
 
-  describe '成功体験コンテンツ新規投稿' do
+  describe '情緒的喚起コンテンツ新規投稿' do
     
     context '新規投稿が可能な時' do
 
@@ -43,5 +43,3 @@ RSpec.describe Emotion, type: :model do
 
   end
 end
-
-# bundle exec rspec spec/models/emotion_spec.rb

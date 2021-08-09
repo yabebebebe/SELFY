@@ -43,5 +43,3 @@ RSpec.describe Success, type: :model do
 
   end
 end
-
-# bundle exec rspec spec/models/success_spec.rb

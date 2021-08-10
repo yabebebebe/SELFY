@@ -167,6 +167,7 @@
 | ------- | ---------- | ------------------------------ |
 | comment | string     | null: false                    |
 | user    | references | null: false, foreign_key: true |
+| partner | integer    | null: false                    |
 
 ### Association
 

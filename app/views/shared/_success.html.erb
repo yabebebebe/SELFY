@@ -8,7 +8,7 @@
         <p class="success-list">
           <%= link_to success.title, success_path(success.id) %>
           <%= success.user.nickname %>
-          <%= l success.created_at %>
+          <%= success.created_at.strftime('%Y/%m/%d %H:%M') %>
         </p>
       <% end %>
     </p>

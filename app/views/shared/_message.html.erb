@@ -1,24 +1,2 @@
 <h1>褒めちぎり</h1>
 
-<div id='messages'>
-  <% @messages.each do |message| %>
-    <% if current_user.id == message.user_id %>
-      <P class="keep-right">
-        <%= message.comment %>
-        <%= image_tag message.user.image, class: "icon" if current_user.image.attached? %>
-      </p>
-    <% else %>
-      <P class="keep-left">
-        <%= image_tag message.user.image, class: "icon" %>
-        <%= message.comment %>
-      </p>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="message-form">
-  <%= form_with(model: [@user, @message], local: true) do |f| %>
-    <%= f.text_field :comment, placeholder: 'メッセージを入力' %>
-    <%= f.submit '送信', id: 'submit' %>
-  <% end %>
-</div>

@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:comment).merge(user_id: params[:user_id])
+    params.require(:message).permit(:comment, :partner_id).merge(user_id: params[:user_id])
   end
 
 end

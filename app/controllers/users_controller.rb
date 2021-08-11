@@ -11,8 +11,8 @@ class UsersController < ApplicationController
     @emotion = Emotion.new
     @emotions = Emotion.all.order("created_at DESC")
 
-    @message = Message.new
-    @messages = Message.all
+     @message = Message.new
+     @messages = Message.all
 
     @note = Note.new
     @notes = Note.all

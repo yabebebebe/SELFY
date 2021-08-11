@@ -1,0 +1,26 @@
+<%= render "shared/header" %>
+
+<h1>情緒的喚起の詳細ページ</h1>
+
+<div class="success-show">
+
+  <div class="success-contents-show">
+    <div class="success-title-show">タイトル</div>
+    <%= @message.title %>
+    <div class="success-text-show">内容</div>
+    <%= @message.text %>
+    <div class="success-user-show">投稿者</div>
+    <%= "by#{@message.user.nickname}さん" %>
+  </div>
+
+  <div class="success-btn">
+    <% if user_signed_in? && current_user.id == @message.user_id %>
+      <%= link_to "編集", edit_user_message_path(@message.id), class: "" %>
+      <p class="or-text">or</p>
+      <%= link_to "削除", user_message_path(@message.id), method: :delete, class: "" %>
+    <% else %>
+      <div class="good-btn">いいね！</div>
+    <% end %>
+  </div>
+
+</div>

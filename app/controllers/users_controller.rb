@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @emotions = Emotion.all.order("created_at DESC")
 
      @message = Message.new
-     @messages = Message.all
+     @messages = Message.all.order("created_at DESC")
 
     @note = Note.new
     @notes = Note.all

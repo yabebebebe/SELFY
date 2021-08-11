@@ -13,7 +13,7 @@
     <div class="profile-content">メールアドレス</div>
       <div><%= current_user.email %></div>
     <div class="profile-content">生年月日</div>
-      <div><%= current_user.birthday %></div>
+      <div><%= current_user.birthday.strftime('%Y/%m/%d') %></div>
     <div class="profile-content">電話番号</div>
       <div><%= current_user.phone %></div>
   </div>

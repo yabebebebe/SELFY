@@ -13,7 +13,8 @@ class MessagesController < ApplicationController
   end
 
   def show
-
+    @comment = Comment.new
+    @comments = @message.comments.includes(:user)
   end
 
   def edit

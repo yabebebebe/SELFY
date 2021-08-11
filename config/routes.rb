@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   resources :emotions, only: :show
   resources :messages, only: :show
   resources :notes, only: :destroy
+  resources :messages do
+    resources :comments, only: :create
+  end
 end

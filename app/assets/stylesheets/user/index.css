@@ -1,3 +1,6 @@
+body {
+  font-family: 'ヒラギノ角ゴシック','Hiragino Sans',YuGothic,'Yu Gothic',sans-serif;
+}
 
 #tab1,#tab2,#tab3,#tab4,#tab5 {
   display: none;

@@ -1,9 +1,24 @@
+.top-page-header {
+  padding: 1px 40px;
+}
+
 .nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  padding: 0;
+}
+
+.header-center {
+  font-style: italic;
 }
 
 .header-logo {
-  text-decoration: none;
+  max-width: 25%;
+  height: auto;
 }
 
 .user-devise {
@@ -11,18 +26,27 @@
   list-style: none;
 }
 
-.logout {
+.logout,.unsubscribe,.login,.sign-up {
+  width: 150px;
+  text-align: center;
   text-decoration: none;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  color: #ffffff;
+  background-image: linear-gradient(#66CDAA 0%, #40E0D0 100%);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  border-bottom: solid 3px #20B2AA;
 }
 
-.unsubscribe {
-  text-decoration: none;
+.logout:active,.unsubscribe:active,.login:active,.sign-up:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
 }
 
-.login {
-  text-decoration: none;
+.login,.logout {
+  margin-right: 30px;
 }
 
-.sign-up {
-  text-decoration: none;
-}

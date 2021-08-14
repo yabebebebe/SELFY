@@ -1,11 +1,13 @@
 <div class="my-page">
 
   <div class="my-image">
-    <%= image_tag current_user.image, class: "" if current_user.image.attached? %>
+    <div class="profile-content">プロフィール画像</div>
+    <%= image_tag current_user.image, class: "my-image" if current_user.image.attached? %>
   </div>
 
 
   <div class="my-profile">
+    <div class="profile-content">ユーザー情報</div>
     <div class="profile-content">ユーザー名</div>
       <div><%= current_user.nickname %></div>
     <div class="profile-content">本名</div>

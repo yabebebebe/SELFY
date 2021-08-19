@@ -1,28 +1,28 @@
 <div class="common-contents">
 
   <div class="left-contents">
-    <h4>褒めちぎって欲しいこと一覧</h4>
+    <h4 class="content-title">褒めちぎって欲しいこと一覧</h4>
 
     <p id="content-lists">
       <% @messages.each do |message| %>
         <p class="content-list">
-          <%= link_to message.title, message_path(message.id) %>
-          <%= message.user.nickname %>
           <%= message.created_at.strftime('%Y/%m/%d %H:%M') %>
+          <%= link_to message.title, message_path(message.id), class: "contents-title" %>
+          <%= "by #{message.user.nickname}さん" %>
         </p>
       <% end %>
     </p>
   </div>
 
   <div class="right-contents">
-    <h4>褒めちぎって欲しいこと投稿</h4>
+    <h4 class="content-title">褒めちぎって欲しいこと投稿</h4>
     <div class="contents-form">
       <%= form_with(model: [@user, @message], local: true) do |f| %>
 
         <div class="form-title">タイトル</div>
-        <%= f.text_area :title, class: "", placeholder: "例）私を褒めちぎって下さい" %>
+        <%= f.text_area :title, class: "title-field", placeholder: "例）私を褒めちぎって下さい" %>
         <div class="form-text">内容</div>
-        <%= f.text_area :text, class: "", placeholder: "具体的に褒めちぎって欲しい事を遠慮なく載せよう！！" %>
+        <%= f.text_area :text, class: "text-field", placeholder: "具体的に褒めちぎって欲しい事を遠慮なく載せよう！！" %>
 
         <div class="form-btn">
           <%= f.submit "投稿", id: "form-submit" %>

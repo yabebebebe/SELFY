@@ -123,15 +123,15 @@
 
 ### Visual Studio Code
 
-## 
-
-## 
-
-## 
-
 ## 実装予定の機能
 
 ### いいね機能
+
+- 目的：他ユーザーからいいねをもらうことで自己効力感向上を図る
+
+- 詳細：JavaScriptを使用した非同期通信でのいいね機能
+
+- リロードすることなくいいね数がその場で反映される
 
 ### チャット機能
 
@@ -141,9 +141,19 @@
 
 - ストーリー：Action Cableの導入が前提です。メッセージを送信したら、リロードされることなくその場で反映されます
 
+# DMO
+
 ## ER図
 
 ### [![Image from Gyazo](https://i.gyazo.com/c30096504a0c8f12786c6cc2ab0272cf.png)](https://gyazo.com/c30096504a0c8f12786c6cc2ab0272cf)
+
+## トップページ
+
+## [![Image from Gyazo](https://i.gyazo.com/faa0f78b562d554edd0c557910ac2dd7.gif)](https://gyazo.com/faa0f78b562d554edd0c557910ac2dd7)
+
+## 
+
+## 
 
 ## 工夫した点
 

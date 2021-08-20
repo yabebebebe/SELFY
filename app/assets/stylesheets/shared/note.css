@@ -1,0 +1,33 @@
+.note-title {
+  text-align: center;
+}
+.message-form {
+  text-align: center;
+  padding: 0 auto;
+}
+
+#note-submit, #delete {
+  text-decoration: none;
+  font-size: 15px;
+  border: 1px solid white;
+  background-color: #40E0D0;
+  color: white;
+}
+
+.comment-field {
+  width: 800px;
+  height: 34px;
+  border: 1px solid #b5aaaa;
+  margin: 1px auto;
+}
+
+#note-submit {
+  width: 100px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+#delete {
+  width: 100px;
+  padding: 11.5px 19px;
+}

@@ -1,31 +1,31 @@
-<div class="success-contents">
+<div class="common-contents">
 
   <div class="left-contents">
-    <h4>成功体験一覧</h4>
+    <h4 class="content-title">成功体験一覧</h4>
 
-    <p id="successes">
+    <p id="content-lists">
       <% @successes.each do |success| %>
-        <p class="success-list">
-          <%= link_to success.title, success_path(success.id) %>
-          <%= success.user.nickname %>
+        <p class="content-list">
           <%= success.created_at.strftime('%Y/%m/%d %H:%M') %>
+          <%= link_to success.title, success_path(success.id), class: "contents-title" %>
+          <%= "by #{success.user.nickname}さん" %>
         </p>
       <% end %>
     </p>
   </div>
 
   <div class="right-contents">
-    <h4>成功体験投稿</h4>
-    <div class="success-form">
+    <h4 class="content-title">成功体験投稿</h4>
+    <div class="contents-form">
       <%= form_with(model: [@user, @success], local: true) do |f| %>
 
-        <div class="success-title">タイトル</div>
-        <%= f.text_area :title, class: "", placeholder: "例）私が転職に成功した話" %>
-        <div class="success-text">内容</div>
-        <%= f.text_area :text, class: "", placeholder: "あなたの成功体験を好きなように投稿しましょう！！" %>
+        <div class="form-title">タイトル</div>
+        <%= f.text_area :title, class: "title-field", placeholder: "例）私が転職に成功した話" %>
+        <div class="form-text">内容</div>
+        <%= f.text_area :text, class: "text-field", placeholder: "あなたの成功体験を好きなように投稿しましょう！！" %>
 
-        <div class="success-btn">
-          <%= f.submit "投稿", id: "success-submit" %>
+        <div class="form-btn">
+          <%= f.submit "投稿", id: "form-submit" %>
         </div>
 
       <% end %>

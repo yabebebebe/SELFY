@@ -1,31 +1,31 @@
-<div class="success-contents">
+<div class="common-contents">
 
   <div class="left-contents">
-    <h4>情緒的喚起一覧</h4>
+    <h4 class="content-title">情緒的喚起一覧</h4>
 
-    <p class="successes-lists">
+    <p id="content-lists">
       <% @emotions.each do |emotion| %>
-        <p class="success-list">
-          <%= link_to emotion.title, emotion_path(emotion.id) %>
-          <%= emotion.user.nickname %>
+        <p class="content-list">
           <%= emotion.created_at.strftime('%Y/%m/%d %H:%M') %>
+          <%= link_to emotion.title, emotion_path(emotion.id), class: "contents-title" %>
+          <%= "by #{emotion.user.nickname}さん" %>
         </p>
       <% end %>
     </p>    
   </div>
 
   <div class="right-contents">
-    <h4>情緒的喚起投稿</h4>
-    <div class="success-form">
+    <h4 class="content-title">情緒的喚起投稿</h4>
+    <div class="contents-form">
       <%= form_with(model: [@user, @emotion], local: true) do |f| %>
 
-        <div class="success-title">タイトル</div>
-        <%= f.text_area :title, class: "", placeholder: "例）私が情緒的喚起できること" %>
-        <div class="success-text">内容</div>
-        <%= f.text_area :text, class: "", placeholder: "あなたが情緒的喚起できることを投稿しましょう！！" %>
+        <div class="form-title">タイトル</div>
+        <%= f.text_area :title, class: "title-field", placeholder: "例）私が情緒的喚起できること" %>
+        <div class="form-text">内容</div>
+        <%= f.text_area :text, class: "text-field", placeholder: "あなたが情緒的喚起できることを投稿しましょう！！" %>
 
-        <div class="success-btn">
-          <%= f.submit "投稿", class: "" %>
+        <div class="form-btn">
+          <%= f.submit "投稿", id: "form-submit" %>
         </div>
 
       <% end %>

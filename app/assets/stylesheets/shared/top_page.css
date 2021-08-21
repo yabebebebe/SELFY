@@ -1,0 +1,16 @@
+.top-page {
+  font-size: 14px;
+  width: 100vw;
+}
+
+.application-explanation {
+  margin-left: 100px;
+}
+
+.top-explanation, .bottom-explanation {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+

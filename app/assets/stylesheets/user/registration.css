@@ -7,7 +7,7 @@
   color: red;
 }
 
-img {
+#image-list img {
   max-width: 15%;
   height: auto;
 }

@@ -1,22 +1,25 @@
 <%= render "shared/header" %>
 
-<h1>成功体験の編集ページ</h1>
+<h2 class="edit-page">編集ページ</h2>
 
+<div class="contents-edit">
 
   <div class="right-contents">
-    <h4>成功体験投稿</h4>
-    <div class="success-form">
+    <h4 class="content-title">成功体験投稿</h4>
+    <div class="contents-form">
       <%= form_with(model: [@user, @success], local: true) do |f| %>
 
-        <div class="success-title">タイトル</div>
-        <%= f.text_area :title, class: "", placeholder: "例）私が転職に成功した話" %>
-        <div class="success-text">内容</div>
-        <%= f.text_area :text, class: "", placeholder: "あなたの成功体験を好きなように投稿しましょう！！" %>
+        <div class="form-title">タイトル</div>
+        <%= f.text_area :title, class: "title-field", placeholder: "例）私が転職に成功した話" %>
+        <div class="form-text">内容</div>
+        <%= f.text_area :text, class: "text-field", placeholder: "あなたの成功体験を好きなように投稿しましょう！！" %>
 
-        <div class="success-btn">
-          <%= f.submit "更新", class: "" %>
+        <div class="form-btn">
+          <%= f.submit "更新", id: "form-submit" %>
         </div>
 
       <% end %>
     </div>
   </div>
+
+</div>

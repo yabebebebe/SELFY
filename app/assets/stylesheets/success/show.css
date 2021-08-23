@@ -1,6 +1,6 @@
 /* 共通の記述のコンテンツ */
 
-.contents-show {
+.contents-show, .contents-edit {
   background-color: white;
   width: 50%;
   margin: 50px auto;

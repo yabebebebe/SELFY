@@ -1,3 +1,5 @@
+/* 共通の記述のコンテンツ */
+
 .contents-show {
   background-color: white;
   width: 50%;
@@ -22,7 +24,7 @@
   margin-top: 30px;
 }
 
-.edit-btn, .delete-btn, .good-btn {
+.edit-btn, .delete-btn, .good-btn, .comment-btn {
   text-decoration: none;
   width: 80px;
   margin-bottom: 30px;
@@ -34,4 +36,26 @@
 
 .or-text {
   margin: 10px;
+}
+
+/* コメント欄のCSS */
+
+.comments-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions {
+  height: 40px;
+  padding-bottom: 4px;
+}
+
+.comment-field {
+  width: 400px;
+  height: 20px;
+  border: 1px solid #b5aaaa;
+  padding: 10px 16px 8px;
+  margin: 30px 10px;
+  font-size: 16px;
 }

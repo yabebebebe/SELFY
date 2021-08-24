@@ -1,6 +1,7 @@
 .failure-page {
   text-align: center;
   padding: 10% 0;
+  line-height: 3;
 }
 
 .need-input {

@@ -1,14 +1,15 @@
 <%= render "shared/header" %>
 
-<h2>退会確認画面(※最終確認です)</h2>
+<div class="unsubscribed-page">
+  <h2>退会確認画面<span style="color: red;">(※最終確認です)</span></h2>
 
-<p>
-  ※退会のお手続きをされますと、全サービスがご利用頂けなくなります。<br>
-&emsp;完全にデータを削除する為、データの復旧は出来かねます。<br>
-&emsp;再度ご利用になる際は、新規登録のお手続きが必要となります。<br>
-&emsp;SELFYから退会されますか？
-</p>
+  <p>
+    ※退会のお手続きをされますと、全サービスがご利用頂けなくなります。<br>
+  &emsp;完全にデータを削除する為、データの復旧は出来かねます。<br>
+  &emsp;再度ご利用になる際は、新規登録のお手続きが必要となります。<br>
+  &emsp;SELFYから退会されますか？
+  </p>
 
-  <%= link_to "退会する", user_path(current_user.id), method: :delete, class: "" %>
-  <%= link_to "退会しない", root_path, class: "" %>
-  
+  <%= link_to "退会する", user_path(current_user.id), method: :delete, class: "unsubscribed-btn" %>
+  <%= link_to "退会しない", root_path, class: "unsubscribed-btn" %>
+</div>

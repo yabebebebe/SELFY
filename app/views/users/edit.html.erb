@@ -1,11 +1,11 @@
 <%= render "shared/header" %>
 
-<h2>新規投稿に失敗しました</h2>
+<div class="failure-page">
+  <h2 class="posting-failure">新規投稿に失敗しました</h2>
 
-<p>
-  ※投稿フォームの各項目は必ず入力してください
-</p>
+  <p class="need-input">
+    ※投稿フォームの各項目は必ず入力してください
+  </p>
 
-<p><%= link_to "トップページへ戻る", root_path, class: "" %></p>
-
-
+  <p><%= link_to "トップページへ戻る", root_path, class: "return" %></p>
+</div>

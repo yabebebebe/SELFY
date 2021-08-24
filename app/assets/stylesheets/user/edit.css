@@ -1,0 +1,13 @@
+.failure-page {
+  text-align: center;
+  padding: 10% 0;
+}
+
+.need-input {
+  color: red;
+}
+
+.return {
+  text-decoration: none;
+  color: black;
+}

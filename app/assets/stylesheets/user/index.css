@@ -1,6 +1,7 @@
 body {
   font-family: 'ヒラギノ角ゴシック','Hiragino Sans',YuGothic,'Yu Gothic',sans-serif;
   background-color: #f5f5f5;
+  margin: 0;
 }
 
 .user-nickname {
@@ -8,11 +9,13 @@ body {
   font-style: italic;
   text-shadow: 1px 1px 2px silver;
   color: #A9A9A9;
+  margin-left: 10px;
 }
 
 .tab {
   width: 100vw;
   padding: 0 1px;
+  margin-left: 10px;
 }
 
 #tab1,#tab2,#tab3,#tab4,#tab5 {

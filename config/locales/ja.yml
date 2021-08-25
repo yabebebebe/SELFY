@@ -27,3 +27,7 @@ ja:
       note:
         comment:  メッセージ
         user:     ユーザー
+      comment:
+        text:     コメント
+        user:     ユーザー
+        message:  褒めちぎり       

@@ -21,7 +21,8 @@ ja:
         text:     内容
         user:     ユーザー
       message:
-        comment:  メッセージ
+        title:    タイトル
+        text:     内容
         user:     ユーザー
       note:
         comment:  メッセージ

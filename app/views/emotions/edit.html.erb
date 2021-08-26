@@ -1,22 +1,27 @@
 <%= render "shared/header" %>
 
-<h1>情緒的喚起の編集ページ</h1>
+<h2 class="edit-page">編集ページ</h2>
 
+<div class="contents-edit">
 
   <div class="right-contents">
-    <h4>情緒的喚起投稿</h4>
-    <div class="success-form">
+    <h4 class="content-title">情緒的喚起投稿</h4>
+    <div class="contents-form">
       <%= form_with(model: [@user, @emotion], local: true) do |f| %>
 
-        <div class="success-title">タイトル</div>
-        <%= f.text_area :title, class: "", placeholder: "例）私が情緒的喚起できること" %>
-        <div class="success-text">内容</div>
-        <%= f.text_area :text, class: "", placeholder: "あなたが情緒的喚起できることを投稿しましょう！！" %>
+        <div class="form-title">タイトル</div>
+        <%= f.text_area :title, class: "title-field", placeholder: "例）私が情緒的喚起できること" %>
+        <div class="form-text">内容</div>
+        <%= f.text_area :text, class: "text-field", placeholder: "あなたが情緒的喚起できることを投稿しましょう！！" %>
 
-        <div class="success-btn">
-          <%= f.submit "更新", class: "" %>
+        <div class="form-btn">
+          <%= f.submit "更新", id: "form-submit" %>
         </div>
 
       <% end %>
     </div>
   </div>
+
+</div>
+
+<%= render "shared/footer" %>

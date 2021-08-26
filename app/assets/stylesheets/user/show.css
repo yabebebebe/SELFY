@@ -1,0 +1,17 @@
+.unsubscribed-page {
+  text-align: center;
+  padding: 5% 0;
+  line-height: 3;
+}
+
+.unsubscribed-btn {
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  width: 150px;
+  margin-bottom: 30px;
+  padding: 0.1em 1em;
+  border: 1px solid white;
+  background-color: #40E0D0;
+  color: white;
+}

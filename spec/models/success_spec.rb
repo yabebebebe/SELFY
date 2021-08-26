@@ -15,7 +15,7 @@ RSpec.describe Success, type: :model do
       
     end
 
-    context '新規登録が不可能な時' do
+    context '新規投稿が不可能な時' do
 
       it 'ユーザー情報が無い時' do
         @success.user = nil

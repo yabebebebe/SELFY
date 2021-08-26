@@ -1,23 +1,21 @@
 <%= render "shared/header" %>
 
-<h1>褒めちぎって欲しいこと詳細ページ</h1>
+<div class="contents-show">
 
-<div class="success-show">
-
-  <div class="success-contents-show">
-    <div class="success-title-show">タイトル</div>
+  <div class="content-show">
+    <div class="title-show">タイトル</div>
     <%= @message.title %>
-    <div class="success-text-show">内容</div>
+    <div class="text-show">内容</div>
     <%= @message.text %>
-    <div class="success-user-show">投稿者</div>
+    <div class="user-show">投稿者</div>
     <%= "by#{@message.user.nickname}さん" %>
   </div>
 
-  <div class="success-btn">
+  <div class="show-btn">
     <% if user_signed_in? && current_user.id == @message.user_id %>
-      <%= link_to "編集", edit_user_message_path(@message.id), class: "" %>
+      <%= link_to "編集", edit_user_message_path(@message.id), class: "edit-btn" %>
       <p class="or-text">or</p>
-      <%= link_to "削除", user_message_path(@message.id), method: :delete, class: "" %>
+      <%= link_to "削除", user_message_path(@message.id), method: :delete, class: "delete-btn" %>
     <% else %>
       <div class="good-btn">いいね！</div>
     <% end %>
@@ -25,13 +23,12 @@
 
   <div class="message-comments">
     <% if user_signed_in? && current_user.id != @message.user_id%>
-      <%= form_with(model: [@message, @comment], local: true) do |f| %>
+      <%= form_with(model: [@message, @comment], class: "comments-form", local: true) do |f| %>
         <div class="field">
-          <%= f.label :text, "コメント" %><br />
-          <%= f.text_field :text, id:"comment_text" %>
+          <%= f.text_field :text, class:"comment-field", placeholder: "コメントを入力" %>
         </div>
         <div class="actions">
-          <%= f.submit "送信する", class: :form__btn  %>
+          <%= f.submit "送信", class: "comment-btn"  %>
         </div>
       <% end %>
     <% end %>
@@ -47,3 +44,5 @@
   </div>
 
 </div>
+
+<%= render "shared/footer" %>

@@ -1,27 +1,27 @@
 <%= render "shared/header" %>
 
-<h1>成功体験の詳細ページ</h1>
+<div class="contents-show">
 
-<div class="success-show">
-
-  <div class="success-contents-show">
-    <div class="success-title-show">タイトル</div>
+  <div class="content-show">
+    <div class="title-show">タイトル</div>
     <%= @success.title %>
-    <div class="success-text-show">内容</div>
+    <div class="text-show">内容</div>
     <%= @success.text %>
-    <div class="success-user-show">投稿者</div>
+    <div class="user-show">投稿者</div>
     <%= "by#{@success.user.nickname}さん" %>
   </div>
 
-  <div class="success-btn">
+  <div class="show-btn">
     <% if user_signed_in? && current_user.id == @success.user_id %>
-      <%= link_to "編集", edit_user_success_path(@success.id), class: "" %>
+      <%= link_to "編集", edit_user_success_path(@success.id), class: "edit-btn" %>
       <p class="or-text">or</p>
-      <%= link_to "削除", user_success_path(@success.id), method: :delete, class: "" %>
+      <%= link_to "削除", user_success_path(@success.id), method: :delete, class: "delete-btn" %>
     <% else %>
       <div class="good-btn">いいね！</div>
     <% end %>
   </div>
 
 </div>
+
+<%= render "shared/footer" %>
 

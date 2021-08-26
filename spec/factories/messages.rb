@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :message do
-    comment {'コメント'}
+    title {'タイトル'}
+    text  {'テキスト'}
 
     user
 

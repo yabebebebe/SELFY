@@ -6,10 +6,14 @@ class User < ApplicationRecord
 
   has_one_attached :image
   has_many         :successes, dependent: :destroy
-  has_many         :emotions, dependent: :destroy
-  has_many         :messages, dependent: :destroy
-  has_many         :notes, dependent: :destroy
-  has_many         :comments, dependent: :destroy
+  has_many         :emotions,  dependent: :destroy
+  has_many         :messages,  dependent: :destroy
+  has_many         :notes,     dependent: :destroy
+  has_many         :comments,  dependent: :destroy
+  has_many         :likes,     dependent: :destroy
+  has_many         :like_successes, through: :likes, source: :success
+  has_many         :like_emotions,  through: :likes, source: :emotion
+  has_many         :like_messages,  through: :likes, source: :message
 
   with_options presence: true do
     validates :image

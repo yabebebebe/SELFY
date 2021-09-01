@@ -12,18 +12,18 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :destroy]
 
   resources :successes, only: :show do
-    resources :likes, only: [:create, :destroy]
+    resource :likes, only: [:create, :destroy]
   end
 
-  resources :emotions, only: :show do
-    resources :likes, only: [:create, :destroy]
-  end
+  resources :emotions, only: :show #do
+    #resource :likes, only: [:create, :destroy]
+  #end
 
   resources :messages, only: :show do
     resources :comments, only: :create
-    resources :likes, only: [:create, :destroy]
+    #resource :likes, only: [:create, :destroy]
   end
-  
+
   resources :notes, only: :destroy
 
 end

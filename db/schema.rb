@@ -55,12 +55,8 @@ ActiveRecord::Schema.define(version: 2021_08_28_153250) do
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "success_id", null: false
-    t.bigint "message_id", null: false
-    t.bigint "emotion_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["emotion_id"], name: "index_likes_on_emotion_id"
-    t.index ["message_id"], name: "index_likes_on_message_id"
     t.index ["success_id"], name: "index_likes_on_success_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
@@ -111,8 +107,6 @@ ActiveRecord::Schema.define(version: 2021_08_28_153250) do
   add_foreign_key "comments", "messages"
   add_foreign_key "comments", "users"
   add_foreign_key "emotions", "users"
-  add_foreign_key "likes", "emotions"
-  add_foreign_key "likes", "messages"
   add_foreign_key "likes", "successes"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "users"

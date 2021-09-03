@@ -14,7 +14,8 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    
+    current_user.likes.find_by(success_id: params[:success_id]).destroy
+    redirect_to root_path
   end
 
   private

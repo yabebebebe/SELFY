@@ -6,7 +6,7 @@ class LikesController < ApplicationController
     unless current_user.like_successes.include?(clicked_success)
       like = current_user.likes.new(success_id: clicked_success.id)
       if like.save
-        redirect_to root_path
+        redirect_to success_path(like.success)
       else
         render "users/edit"
       end

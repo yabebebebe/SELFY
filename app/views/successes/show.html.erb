@@ -28,6 +28,7 @@
           <%= f.submit 'いいね！', class: "good-btn" %>
         <% end %>
       <% end %>
+      <%= @success.likes.count(@success.id) %>
     <% end %>
 
   </div>

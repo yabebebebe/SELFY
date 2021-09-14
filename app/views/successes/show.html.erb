@@ -21,14 +21,16 @@
         <%= form_with(model: @like, url: success_likes_path(@success.id), method: :delete, local: true) do |f| %>
           <%= f.hidden_field :success_id, value: @success.id %>
           <%= f.submit 'いいね解除', class: "good-btn" %>
+          <%= @success.likes.count(@success.id) %>
         <% end %>
       <% else %>
         <%= form_with(model: @like, url: success_likes_path(@success.id), local: true) do |f| %>
           <%= f.hidden_field :success_id, value: @success.id %>
           <%= f.submit 'いいね！', class: "good-btn" %>
+          <%= @success.likes.count(@success.id) %>
         <% end %>
       <% end %>
-      <%= @success.likes.count(@success.id) %>
+      
     <% end %>
 
   </div>

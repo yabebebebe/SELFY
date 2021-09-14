@@ -13,7 +13,7 @@ class SuccessesController < ApplicationController
   end
 
   def show
-
+    @like = Like.new
   end
 
   def edit

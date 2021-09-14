@@ -145,7 +145,7 @@
 
 ## ER図
 
-### [![Image from Gyazo](https://i.gyazo.com/c30096504a0c8f12786c6cc2ab0272cf.png)](https://gyazo.com/c30096504a0c8f12786c6cc2ab0272cf)
+### [![Image from Gyazo](https://i.gyazo.com/188af095e090147ca1c5eed95a8ba5bd.png)](https://gyazo.com/188af095e090147ca1c5eed95a8ba5bd)
 
 ## トップページ
 
@@ -183,6 +183,10 @@
 - has_many   :messages
 - has_many   :notes
 - has_many   :comments
+- has_many   :likes
+- has_many   :like_successes, through: :likes, source: :success
+- has_many   :like_emotions, through: :likes, source: :emotion
+- has_many   :like_messages, through: :likes, source: :message
 
 ## successesテーブル
 
@@ -244,3 +248,19 @@
 
 - belongs_to :user
 - belongs_to :message
+
+## likesテーブル
+
+| Colum   | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| success | references | null: false, foreign_key: true |
+| message | references | null: false, foreign_key: true |
+| emotion | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :success
+- belongs_to :message
+- belongs_to :emotion

@@ -8,12 +8,22 @@ Rails.application.routes.draw do
     resources :messages, only: [:create, :edit, :update, :destroy]
     resources :notes, only: :create
   end
+
   resources :users, only: [:show, :edit, :destroy]
-  resources :successes, only: :show
-  resources :emotions, only: :show
-  resources :messages, only: :show
-  resources :notes, only: :destroy
-  resources :messages do
-    resources :comments, only: :create
+
+  resources :successes, only: :show do
+    resource :likes, only: [:create, :destroy]
   end
+
+  resources :emotions, only: :show #do
+    #resource :likes, only: [:create, :destroy]
+  #end
+
+  resources :messages, only: :show do
+    resources :comments, only: :create
+    #resource :likes, only: [:create, :destroy]
+  end
+
+  resources :notes, only: :destroy
+
 end
